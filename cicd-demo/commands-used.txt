@@ -1,0 +1,64 @@
+# Connect to EC2
+ssh -i "flk-key.pem" ec2-user@<public-ip>
+
+# Install Git
+sudo yum install git -y
+
+# Install Nginx
+sudo yum install nginx -y
+
+# Start Nginx
+sudo systemctl start nginx
+
+# Enable Nginx at Boot
+sudo systemctl enable nginx
+
+# Clone GitHub Repository
+git clone <repository-url>
+
+# Navigate into Repository
+cd cicd-demo
+
+# Pull Latest Changes from GitHub
+git pull origin master
+
+# Verify Files
+ls
+
+# Copy Website Files to Nginx Web Directory
+sudo cp -r * /usr/share/nginx/html/
+
+# Restart Nginx
+sudo systemctl restart nginx
+
+# Check Nginx Status
+sudo systemctl status nginx
+
+# Verify Website Access
+http://<public-ip>
+
+# Local Git Operations
+
+# Navigate to Local Project Folder
+cd ~/cloud-projects
+
+# Initialize Git Repository
+git init
+
+# Add Remote GitHub Repository
+git remote add origin <repository-url>
+
+# Verify Remote Repository
+git remote -v
+
+# Add Project Files
+git add cicd-demo/
+
+# Check Git Status
+git status
+
+# Commit Changes
+git commit -m "Added CI/CD demo website files"
+
+# Push Files to GitHub
+git push origin master

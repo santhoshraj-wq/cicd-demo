@@ -1,0 +1,35 @@
+                 Basic CI/CD Deployment Workflow
+
+                Developer Updates Website Code
+                               │
+                               ▼
+                    Local Project Folder
+                               │
+                               ▼
+                     Git Commands Used
+                    (add → commit → push)
+                               │
+                               ▼
+                     GitHub Repository
+                               │
+                               ▼
+                  EC2 Server Clones/Pulls Code
+                               │
+                               ▼
+                       Git Pull Operation
+                               │
+                               ▼
+                Website Files Copied to Nginx
+              (/usr/share/nginx/html/)
+                               │
+                               ▼
+                      Nginx Web Server
+                               │
+                               ▼
+                     EC2 Public IP : 80
+                               │
+                               ▼
+                     Website Accessed by User
+                               │
+                               ▼
+                    Updated Website Displayed
