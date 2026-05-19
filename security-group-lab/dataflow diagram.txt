@@ -1,0 +1,29 @@
+                 AWS Security Group Access Flow
+
+                      User Browser / SSH
+                               │
+                ┌──────────────┴──────────────┐
+                │                             │
+                ▼                             ▼
+          HTTP Request                   SSH Request
+            Port 80                        Port 22
+                │                             │
+                ▼                             ▼
+                 AWS Security Group (Firewall)
+                ┌─────────────────────────────┐
+                │                             │
+                │  HTTP → Allowed Anywhere    │
+                │  SSH  → Allowed My IP Only  │
+                │                             │
+                └─────────────────────────────┘
+                               │
+                               ▼
+                        EC2 Instance
+                               │
+                ┌──────────────┴──────────────┐
+                │                             │
+                ▼                             ▼
+          Nginx Web Server             SSH Terminal Access
+                │
+                ▼
+        Website Displayed in Browser
