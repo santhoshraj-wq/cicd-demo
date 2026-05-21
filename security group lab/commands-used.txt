@@ -1,0 +1,54 @@
+# Launch EC2 Instance
+
+AWS Console → EC2 → Launch Instance
+
+# Connect to EC2
+
+ssh -i "key.pem" ec2-user@<public-ip>
+
+# Install Nginx
+
+sudo yum install nginx -y
+
+# Start Nginx Service
+
+sudo systemctl start nginx
+
+# Enable Nginx at Boot
+
+sudo systemctl enable nginx
+
+# Check Nginx Status
+
+sudo systemctl status nginx
+
+# Verify Public Website Access
+
+http://<public-ip>
+
+# Security Group Configuration
+
+# Create Security Group
+
+secure-ec2-sg
+
+# Inbound Rules Configured
+
+SSH  → Port 22 → My IP
+HTTP → Port 80 → Anywhere
+
+# Modify Security Group Rules
+
+AWS Console → EC2 → Security Groups → Edit inbound rules
+
+# Remove HTTP Rule (Testing)
+
+Delete HTTP inbound rule temporarily
+
+# Re-add HTTP Rule
+
+HTTP → Port 80 → Anywhere
+
+# Verify Access Again
+
+http://<public-ip>
